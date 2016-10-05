@@ -3,6 +3,7 @@ package com.example.android.helloworld;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        mButton.setVisibility(View.INVISIBLE);
+        ((ViewGroup) view.getParent()).removeView(view);
     }
 }
